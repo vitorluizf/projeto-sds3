@@ -16,7 +16,7 @@ const DataTable = () => {
 
     useEffect(() => {
         axios.get(`${BASE_URL}/sales?page=0&size=20&sort=date,desc`)
-            .then((response) => {
+            .then(response => {
                 setPage(response.data);
 
             });
@@ -35,7 +35,7 @@ const DataTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {page.contente?.map(item => (
+                    {page.content?.map(item => (
                         <tr key={item.id}>
                             <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
                             <td>{item.seller.name}</td>
